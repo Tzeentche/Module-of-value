@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+/**
+ * Created by Хорус on 04.12.2018.
+ @author Хорус
+ @version 1.4 05.12.2018
+ */
+public class Mathemathics {
+
+        public static void main(String[] args) {
+
+                Scanner in = new Scanner(System.in);
+                int a[] = new int[4];
+                int n;
+                for (int i = 0; i <= a.length-1; i++){
+                        String b = null;
+                        switch (i) {
+                                case 0 : b = "A";
+                                        break;
+                                case 1 : b = "B";
+                                        break;
+                                case 2 : b = "C";
+                                        break;
+                                case 3 : b = "X";
+                                        break;
+                        }
+
+                                try {
+                                        System.out.println("Enter integer value " + b);
+                                        a[i] = in.nextInt();
+                                } catch (InputMismatchException e) {
+                                        System.out.println("Wrong value " + b);
+                                        a[i] = 1;
+
+                                        // System.out.println(a[i]);
+                                }
+                }
+                n = (a[0] * a[3] * a[3]) + (a[1] * a[3]) + a[2];
+                n = (n > 0) ? n : -n;
+                System.out.println("Value is " + n);
+    }
+}
+
+
